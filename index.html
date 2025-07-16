@@ -20,7 +20,7 @@
         .addEventListener("click", addContact);
 
       function fetchContacts() {
-        fetch(rootPath + "contoller/get-contacts")
+        fetch(rootPath + "contoller/get-contacts/")
           .then(function (response) {
             return response.json();
           })
@@ -32,7 +32,7 @@
       function displayOutput(data) {
         output = "<table>";
 
-        for (a in data) {
+        for (const a in data) {
           output += `<tr onclick="editContact(${data[a].id})">
       <td>
         <img src="${rootPath}controller/uploads/${data[a].avatar}" width="40"/> </td> 
